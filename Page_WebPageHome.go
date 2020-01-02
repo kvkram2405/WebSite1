@@ -9,6 +9,7 @@ func homeFunc(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-type", "text/html")
 	fmt.Fprint(w, "<h1>Home</h1>")
 	fmt.Fprint(w, "<B>Kalyan </B>")
+//fmt.Fprint(w, r.URL.Path)
 }
 func aboutusFunc(w http.ResponseWriter, r *http.Request) {
 	//w.Header().Set("content-type", "text/plan")
@@ -27,8 +28,13 @@ func fbFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>FB link</h1>")
 }
 func tFunc(w http.ResponseWriter, r *http.Request) {
+
 	fmt.Fprint(w, "<h1>T link</h1>")
 }
+func pathFunc(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, r.URL.Path)
+}
+
 
 func main() {
 	http.HandleFunc("/home", homeFunc)
@@ -38,5 +44,6 @@ func main() {
 	http.HandleFunc("/data", dataFunc)
 	http.HandleFunc("/fb", fbFunc)
 	http.HandleFunc("/t", tFunc)
+	http.HandleFunc("/path", pathFunc)
 	http.ListenAndServe(":3000", nil)
 }
