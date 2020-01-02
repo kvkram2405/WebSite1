@@ -10,14 +10,14 @@ func homeFunc(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/" {
 		fmt.Fprint(w, "<h1>home</h1>")
 		//fmt.Fprint(w, r.URL.Path)
-	}
-	if r.URL.Path == "/fb" {
+	} else if r.URL.Path == "/fb" {
 		fmt.Fprint(w, "<h1>FB</h1>")
 		//fmt.Fprint(w, r.URL.Path)
-	}
-	if r.URL.Path == "/t" {
+	} else if r.URL.Path == "/t" {
 		fmt.Fprint(w, "<h1>T</h1>")
 		//fmt.Fprint(w, r.URL.Path)
+	} else {
+		w.WriteHeader(http.StatusNotFound)
 	}
 
 }
