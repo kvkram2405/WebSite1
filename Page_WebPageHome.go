@@ -13,7 +13,7 @@ func aboutusFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>AboutUs... OUR COMPANY</h1>")
 }
 func loginFunc(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "<h1>Login... Enter Your login name Password here </h1>")
+	fmt.Fprint(w, "<h1>Login...to check your data Enter Your login name Password here </h1>")
 }
 func logoutFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>logout</h1>")
