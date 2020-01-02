@@ -27,6 +27,6 @@ func main() {
 	http.HandleFunc("/aboutus", aboutusFunc)
 	http.HandleFunc("/login", loginFunc)
 	http.HandleFunc("/logout", logoutFunc)
-	http.HandleFunc("/data", logoutFunc)
+	http.HandleFunc("/data", dataFunc)
 	http.ListenAndServe(":3000", nil)
 }
