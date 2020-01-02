@@ -6,10 +6,12 @@ import (
 )
 
 func homeFunc(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("content-type", "text/html")
 	fmt.Fprint(w, "<h1>Home</h1>")
 	fmt.Fprint(w, "<B>Kalyan </B>")
 }
 func aboutusFunc(w http.ResponseWriter, r *http.Request) {
+	//w.Header().Set("content-type", "text/plan")
 	fmt.Fprint(w, "<h1>AboutUs... OUR COMPANY</h1>")
 }
 func loginFunc(w http.ResponseWriter, r *http.Request) {
@@ -27,8 +29,6 @@ func fbFunc(w http.ResponseWriter, r *http.Request) {
 func tFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>T link</h1>")
 }
-
-
 
 func main() {
 	http.HandleFunc("/home", homeFunc)
