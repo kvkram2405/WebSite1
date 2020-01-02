@@ -18,10 +18,15 @@ func loginFunc(w http.ResponseWriter, r *http.Request) {
 func logoutFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>logout</h1>")
 }
+func dataFunc(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "<h1>GetData From Database</h1>")
+}
+
 func main() {
 	http.HandleFunc("/home", homeFunc)
 	http.HandleFunc("/aboutus", aboutusFunc)
 	http.HandleFunc("/login", loginFunc)
 	http.HandleFunc("/logout", logoutFunc)
+	http.HandleFunc("/data", logoutFunc)
 	http.ListenAndServe(":3000", nil)
 }
