@@ -21,6 +21,10 @@ func logoutFunc(w http.ResponseWriter, r *http.Request) {
 func dataFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>GetData From Database</h1>")
 }
+func fbFunc(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "<h1>FB link</h1>")
+}
+
 
 func main() {
 	http.HandleFunc("/home", homeFunc)
@@ -28,5 +32,6 @@ func main() {
 	http.HandleFunc("/login", loginFunc)
 	http.HandleFunc("/logout", logoutFunc)
 	http.HandleFunc("/data", dataFunc)
+	http.HandleFunc("/fb", fbFunc)
 	http.ListenAndServe(":3000", nil)
 }
