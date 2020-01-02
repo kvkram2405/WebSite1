@@ -10,7 +10,7 @@ func homeFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<B>Kalyan </B>")
 }
 func aboutusFunc(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "<h1>AboutUs</h1>")
+	fmt.Fprint(w, "<h1>AboutUs... OUR COMPANY</h1>")
 }
 func loginFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>Login</h1>")
