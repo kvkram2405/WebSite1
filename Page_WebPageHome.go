@@ -49,13 +49,27 @@ func pathFunc(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	http.HandleFunc("/", homeFunc)
-	http.HandleFunc("/aboutus", aboutusFunc)
-	http.HandleFunc("/login", loginFunc)
-	http.HandleFunc("/logout", logoutFunc)
-	http.HandleFunc("/data", dataFunc)
+	// mux code here
+
+	mux := &http.ServeMux{}
+	mux.HandleFunc("/", homeFunc)
+	mux.HandleFunc("/aboutus", aboutusFunc)
+	mux.HandleFunc("/login", loginFunc)
+	mux.HandleFunc("/logout", logoutFunc)
+	mux.HandleFunc("/data", dataFunc)
+	mux.HandleFunc("/path", pathFunc)
+	http.ListenAndServe(":3000", mux)
+
+	// http code here
+
+	//http.HandleFunc("/", homeFunc)
+	//http.HandleFunc("/aboutus", aboutusFunc)
+	//http.HandleFunc("/login", loginFunc)
+	//http.HandleFunc("/logout", logoutFunc)
+	//http.HandleFunc("/data", dataFunc)
 	//http.HandleFunc("/fb", fbFunc)
 	//http.HandleFunc("/t", tFunc)
-	http.HandleFunc("/path", pathFunc)
-	http.ListenAndServe(":3000", nil)
+	//http.HandleFunc("/path", pathFunc)
+	//http.ListenAndServe(":3000", nil)
+
 }
