@@ -21,7 +21,6 @@ func homeFunc(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
-
 func aboutusFunc(w http.ResponseWriter, r *http.Request) {
 	//w.Header().Set("content-type", "text/plan")
 	fmt.Fprint(w, "<h1>AboutUs... OUR COMPANY</h1>")
