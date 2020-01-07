@@ -34,7 +34,7 @@ func Protected(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 func main() {
 	user := "kalyan"
-	pass := "Welcome@1"
+	pass := "Welcome@12"
 	router := httprouter.New()
 	router.GET("/", Index)
 	router.GET("/protected/", BasicAuth(Protected, user, pass))
