@@ -17,4 +17,14 @@ func main() {
 
 	username := strings.Split("vkalipat@gmail.com", "@")
 	fmt.Printf("%q\n", username[0])
+
+var i int
+ 	fmt.Print("Enter an integer to generate the multiplication table : ")
+ 	fmt.Scanln(&i)
+
+ 	for n := 1; n <= 10; n++ {
+ 		fmt.Println(i, " X ", n, " = ", i*n)
+ 	}
+
 }
+
